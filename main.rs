@@ -8,7 +8,25 @@ fn main() {
         println!("A nota {} é = {}", indice + 1, notas[indice]);
     }
 
-    matriz()
+    matriz();
+    println!("É fim de semana? {}", eh_fim_de_semana(DiaDaSemana::Domingo));
+}
+
+enum DiaDaSemana {
+    Domingo,
+    Segunda,
+    Terca,
+    Quarta,
+    Quinta,
+    Sexta,
+    Sabado
+}
+
+fn eh_fim_de_semana(dia_da_semana: DiaDaSemana) -> bool {
+    match dia_da_semana {
+        DiaDaSemana::Domingo | DiaDaSemana::Sabado => true,
+        _ => false
+    }
 }
 
 fn matriz() {
