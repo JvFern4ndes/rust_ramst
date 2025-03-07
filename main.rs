@@ -102,5 +102,15 @@ fn vectors() {
     println!("Nota 6 = {}", match notas.get(7) {
         Some(n) => *n,
         None => 0.0
-    })
+    });
+
+    /* while let Some(nota) = notas.pop() {
+        println!("Valor removido = {}", nota);
+        println!("{:?}", notas);
+    } */
+
+   for nota in &notas {
+    println!("Nota = {}", nota);
+   }
+   println!("{:?}", notas);
 }
