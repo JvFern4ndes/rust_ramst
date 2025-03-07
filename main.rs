@@ -94,9 +94,13 @@ fn vectors() {
     
     println!("{:?}", notas);
     
-    notas.push(10.0);
-    notas.push(8.8);
-    notas.push(6.5);
-
+    notas.push(6.8);
     println!("{:?}", notas);
+
+    println!("Nota 1 = {}", notas[0]);
+
+    println!("Nota 6 = {}", match notas.get(7) {
+        Some(n) => *n,
+        None => 0.0
+    })
 }
