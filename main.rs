@@ -11,7 +11,8 @@ fn main() {
     matriz();
     println!("É fim de semana? {}", eh_fim_de_semana(DiaDaSemana::Quarta));
 
-    cores()
+    cores();
+    conteudo_opcional();
 }
 
 #[allow(dead_code)]
@@ -66,4 +67,19 @@ fn cores() {
         Color::RgbColor(_, _, _,) => "RGB desconhecido",
         Color::CymkColor{cyan: _, magenta: _, yellow: _, black: _} => "CMYK desconhecido"
     })
+}
+
+fn conteudo_opcional() {
+    let conteudo_arquivo = ler_arquivo(String::from(""));
+
+    match &conteudo_arquivo {
+        Some(valor) => print!("{}", valor),
+        None => print!("Arquivo nao existe")
+    };
+
+    print!("{:?}", conteudo_arquivo);
+}
+
+fn ler_arquivo(caminho_arquivo: String) -> Option<String> {
+    Some(String::from("Conteudo do arquivo"))
 }
