@@ -78,6 +78,10 @@ fn conteudo_opcional() {
     };
 
     print!("{:?}", conteudo_arquivo);
+
+    if let Some(valor) = conteudo_arquivo {
+        println!("Agora, tenho certeza de que ha o valor {}", valor);
+    }
 }
 
 fn ler_arquivo(caminho_arquivo: String) -> Option<String> {
